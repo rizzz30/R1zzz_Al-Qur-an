@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R1zzz_Al-Qur'an - Temukan Ketenangan dalam Setiap Ayat</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="light-mode">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#beranda" class="brand-logo">
+        <div class="logo-icon"><i class="fa-solid fa-quran"></i></div>
+        <div class="brand-text">
+          <span class="brand-name">R1zzz_Al-Qur'an</span>
+          <span class="brand-tagline">Digital Quran Platform</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#beranda" class="nav-link active"><i class="fa-solid fa-house"></i> Beranda</a></li>
+        <li><a href="#surah" class="nav-link"><i class="fa-solid fa-book-quran"></i> Daftar Surah</a></li>
+        <li><a href="#juz" class="nav-link"><i class="fa-solid fa-layer-group"></i> Daftar Juz</a></li>
+        <li><a href="#bookmark" class="nav-link"><i class="fa-solid fa-bookmark"></i> Bookmark</a></li>
+        <li><a href="#search" class="nav-link"><i class="fa-solid fa-magnifying-glass"></i> Cari Ayat</a></li>
+        <li><a href="#doa" class="nav-link"><i class="fa-solid fa-hands-praying"></i> Doa Harian</a></li>
+        <li>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content" id="appContent">
+    
+    <!-- VIEW 1: BERANDA -->
+    <section id="view-beranda" class="view-section active">
+      <div class="hero-section">
+        <div class="hero-content">
+          <div class="badge-tag"><i class="fa-solid fa-star-and-crescent"></i> Platform Qur'an Digital Modern</div>
+          <h1>Al-Qur'an, Petunjuk Sepanjang Zaman</h1>
+          <p>"Temukan Ketenangan dalam Setiap Ayat. Baca, pahami, dan dengarkan ayat suci Al-Qur'an kapan saja dan di mana saja."</p>
+          <div class="hero-buttons">
+            <a href="#surah" class="btn btn-primary"><i class="fa-solid fa-book-open"></i> Mulai Membaca</a>
+            <a href="#juz" class="btn btn-outline"><i class="fa-solid fa-list-ol"></i> Jelajahi Juz</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LANJUTKAN BACAAN CARD -->
+      <div class="last-read-card" id="lastReadCard">
+        <div class="last-read-info">
+          <div class="last-read-icon"><i class="fa-solid fa-bookmark"></i></div>
+          <div>
+            <span class="sub-label">LANJUTKAN BACAAN</span>
+            <h3 id="lastReadTitle">Belum Ada Bacaan</h3>
+            <p id="lastReadDetail">Mulai perjalanan membaca Al-Qur'an Anda hari ini.</p>
+          </div>
+        </div>
+        <button id="btnContinueRead" class="btn btn-gold" disabled>Lanjutkan <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+
+      <!-- STATISTIK AL-QURAN -->
+      <div class="stats-grid">
+        <div class="stat-box">
+          <i class="fa-solid fa-book"></i>
+          <span class="stat-num">114</span>
+          <span class="stat-label">Surah</span>
+        </div>
+        <div class="stat-box">
+          <i class="fa-solid fa-layer-group"></i>
+          <span class="stat-num">30</span>
+          <span class="stat-label">Juz</span>
+        </div>
+        <div class="stat-box">
+          <i class="fa-solid fa-align-right"></i>
+          <span class="stat-num">6.236</span>
+          <span class="stat-label">Ayat</span>
+        </div>
+      </div>
+
+      <!-- SURAH PILIHAN -->
+      <div class="section-header">
+        <h2>Surah Pilihan</h2>
+        <p>Akses cepat ke surah-surah yang sering dibaca</p>
+      </div>
+      <div class="featured-surah-grid" id="featuredSurahGrid"></div>
+    </section>
+
+    <!-- VIEW 2: DAFTAR SURAH -->
+    <section id="view-surah" class="view-section">
+      <div class="section-header text-center">
+        <h2>Daftar 114 Surah</h2>
+        <p>Telusuri seluruh surah dalam Al-Qur'an</p>
+      </div>
+      
+      <div class="filter-bar">
+        <div class="search-input-wrapper">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="surahSearchInput" placeholder="Cari nama surah atau nomor...">
+        </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Semua</button>
+          <button class="filter-btn" data-filter="makkiyah">Makkiyah</button>
+          <button class="filter-btn" data-filter="madaniyah">Madaniyah</button>
+        </div>
+      </div>
+
+      <div class="surah-grid" id="surahGrid"></div>
+    </section>
+
+    <!-- VIEW 3: DAFTAR JUZ -->
+    <section id="view-juz" class="view-section">
+      <div class="section-header text-center">
+        <h2>Daftar 30 Juz</h2>
+        <p>Membaca Al-Qur'an berdasarkan urutan Juz</p>
+      </div>
+      <div class="juz-grid" id="juzGrid"></div>
+    </section>
+
+    <!-- VIEW 4: READER / PEMBACA AYAT -->
+    <section id="view-reader" class="view-section">
+      <div class="reader-header-card" id="readerHeader"></div>
+
+      <div class="reader-toolbar">
+        <div class="tool-group">
+          <label>Ukuran Arab:</label>
+          <button class="btn-sm" id="btnFontArabDec">-</button>
+          <span id="fontArabSizeDisplay">32px</span>
+          <button class="btn-sm" id="btnFontArabInc">+</button>
+        </div>
+        <div class="tool-group">
+          <label>Ukuran Terjemahan:</label>
+          <button class="btn-sm" id="btnFontTransDec">-</button>
+          <span id="fontTransSizeDisplay">16px</span>
+          <button class="btn-sm" id="btnFontTransInc">+</button>
+        </div>
+        <div class="tool-group">
+          <button class="btn btn-primary btn-sm" id="btnAutoPlayAll" style="padding: 6px 14px; font-size: 0.85rem;">
+            <i class="fa-solid fa-play"></i> Auto-Play Murottal
+          </button>
+        </div>
+      </div>
+
+      <div class="verses-container" id="versesContainer"></div>
+
+      <div class="reader-navigation">
+        <button id="btnPrevSurah" class="btn btn-outline"><i class="fa-solid fa-chevron-left"></i> Surah Sebelumnya</button>
+        <button id="btnNextSurah" class="btn btn-outline">Surah Berikutnya <i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </section>
+
+    <!-- VIEW 5: BOOKMARK -->
+    <section id="view-bookmark" class="view-section">
+      <div class="section-header text-center">
+        <h2>Ayat Difavoritkan</h2>
+        <p>Kumpulan ayat yang Anda simpan untuk dibaca kembali</p>
+      </div>
+      <div class="verses-container" id="bookmarkList"></div>
+    </section>
+
+    <!-- VIEW 6: SEARCH -->
+    <section id="view-search" class="view-section">
+      <div class="section-header text-center">
+        <h2>Pencarian Surah & Ayat</h2>
+        <p>Cari surah berdasarkan nama atau kata kunci</p>
+      </div>
+      <div class="global-search-box">
+        <input type="text" id="globalSearchInput" placeholder="Ketik kata kunci atau nama surah...">
+        <button id="btnSubmitSearch" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Cari</button>
+      </div>
+      <div class="search-results-info" id="searchResultCount" style="margin-top: 1rem; color: var(--text-muted-light);"></div>
+      <div class="verses-container" id="searchResultsContainer" style="margin-top: 1rem;"></div>
+    </section>
+
+    <!-- VIEW 7: DOA HARIAN -->
+    <section id="view-doa" class="view-section">
+      <div class="section-header text-center">
+        <h2>Kumpulan 50 Doa Harian</h2>
+        <p>Doa-doa pilihan untuk amalan dan perlindungan sehari-hari</p>
+      </div>
+      <div class="doa-grid" id="doaGridContainer"></div>
+    </section>
+  </main>
+
+  <!-- FLOATING AUDIO PLAYER -->
+  <div class="audio-player-bar hidden" id="audioPlayerBar">
+    <div class="audio-info">
+      <span class="audio-title" id="audioTitle">Surah Al-Fatihah: Ayat 1</span>
+      <span class="audio-qari" id="audioQari">Mishary Rashid Alafasy</span>
+    </div>
+    <div class="audio-controls">
+      <button id="btnAudioPrev" title="Ayat Sebelumnya"><i class="fa-solid fa-backward-step"></i></button>
+      <button id="btnAudioPlayPause" class="play-btn" title="Putar/Jeda"><i class="fa-solid fa-pause"></i></button>
+      <button id="btnAudioNext" title="Ayat Berikutnya"><i class="fa-solid fa-forward-step"></i></button>
+    </div>
+    <div class="audio-close">
+      <button id="btnAudioClose"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+
+  <!-- TAFSIR MODAL -->
+  <div class="modal-overlay hidden" id="tafsirModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="tafsirModalTitle">Tafsir Ayat</h3>
+        <button class="modal-close" id="btnCloseTafsir"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="tafsirModalBody">
+        <p>Memuat tafsir...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>R1zzz_Al-Qur'an</h3>
+        <p>Platform Al-Qur'an Digital Modern, Elegan & Terpercaya.</p>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2026 R1zzz_Al-Qur'an. Seluruh hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT TERPISAH -->
+  <script src="js/api.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/bookmark.js"></script>
+  <script src="js/lastread.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/doa.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

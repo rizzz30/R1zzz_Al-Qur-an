@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .nav-links { position: absolute; top: 100%; left: 0; width: 100%; background: var(--dark-emerald); flex-direction: column; padding: 1.5rem; gap: 1rem; display: none; }
+  .nav-links.active { display: flex; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .last-read-card { flex-direction: column; gap: 1rem; text-align: center; }
+  .last-read-info { flex-direction: column; }
+  .filter-bar { flex-direction: column; }
+  .reader-toolbar { flex-direction: column; gap: 1rem; align-items: stretch; }
+}
